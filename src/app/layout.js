@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,8 +21,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
+        <header className="bg-blue-600 text-white">
+          <div className="max-w-5xl mx-auto px-4 py-4">
+            <Link href="/" className="text-xl font-semibold">
+              Game Account Marketplace
+            </Link>
+          </div>
+        </header>
         {children}
       </body>
     </html>
